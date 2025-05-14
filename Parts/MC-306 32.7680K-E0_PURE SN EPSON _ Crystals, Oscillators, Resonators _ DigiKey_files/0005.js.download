@@ -1,0 +1,64 @@
+//name the file with the same number as the testId as set in the dktst file
+(function () {
+    //match testId and userSplit from main file, testName passed to contentsquare tracking variables
+    let testId = "0005"; 
+    let testName = "MQR Replace Message";
+    let userSplit = "100";
+
+    //check if user has been split and cookie set, if not a cookie gets created
+    if (!__dktst.getCookie("dktst_" + testId)) {
+        __dktst.splitUsers(testId, userSplit);
+    }
+
+    //checks cookie value for variant or control and runs appropriate scripts
+    if (__dktst.getCookie("dktst_" + testId) == "variant") {
+        // TEST VARIANT CODE 
+        function updateMessaging(){
+            let loginUrl = document.querySelectorAll('#authControls__login a')[0].getAttribute('href');
+            let registerUrl = document.querySelectorAll('#authControls__register a')[0].getAttribute('href');
+            let oldMsg = document.querySelectorAll('[data-testid="qtyAvailableNotes-messages"] div:last-of-type')[0];
+            if (oldMsg.textContent.includes("Quote Required, submit request")) {
+                const newElement = document.createElement('div');
+                newElement.innerHTML = '<span class="mqrLogin" style="font-size:12px;"><a class="dk-link mqrLoginLink" id="mqrLoginLink" href="'+ loginUrl+ '" onClick="javascript:__dktst.csTrackEvent("mqrLoginLinkClick")">Login</a> or <a class="dk-link mqrRegisterLink" id="mqrRegisterLink" href="'+ registerUrl +'" onClick="javascript:__dktst.csTrackEvent("mqrRegisterLinkClick")">register</a> to request a quote.</span>';
+                oldMsg.parentNode.replaceChild(newElement, oldMsg);
+                __dktst.csTrackEvent("mqrMessageAdded");
+            }
+        };
+        
+        //Check for the messages container and run updateMessaging()
+        __dktst.waitForEl("[data-testid='qtyAvailableNotes-messages']", function() {
+            __headerLayout.addRegistrationStatusListener(
+                function(status) {
+                    if (status.IsLoggedIn === false) {
+                        updateMessaging();
+                    }
+                }
+            )
+        })
+        
+        //Observe for changes to the body and check for path changes, then check for the messages container and run updateMessaging() 
+        let currentPathMQR = window.location.href;
+        new MutationObserver(function() {
+            if (currentPathMQR != window.location.href) {
+                currentPathMQR = window.location.href;
+                __dktst.waitForEl("[data-testid='qtyAvailableNotes-messages']", function() {
+                    __headerLayout.addRegistrationStatusListener(
+                        function(status) {
+                            if (status.IsLoggedIn === false) {
+                                updateMessaging();
+                            }
+                        }
+                    )
+                })
+            }
+        }).observe(document.querySelector("body"), {subtree: true, childList: true});
+        
+        // required in all tests to push the variant value to contentsquare for tracking
+        __dktst.setTrackDynamicVariable(testId, testName, "variant")
+    } else if(__dktst.getCookie("dktst_" + testId) == "control") {
+        // TEST CONTROL CODE
+
+        // required in all tests to push the control value to contentsquare for tracking
+        __dktst.setTrackDynamicVariable(testId, testName, "control")
+    }
+})();

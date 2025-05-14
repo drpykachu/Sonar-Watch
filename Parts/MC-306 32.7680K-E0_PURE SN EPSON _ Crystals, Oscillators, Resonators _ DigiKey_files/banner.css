@@ -1,0 +1,166 @@
+.shipping-notice-banner {
+    height: 70px; 
+    width: 100%; 
+    display: block; 
+    z-index: 102; 
+    top: 0px; 
+    position: fixed;
+    background-color: #b30503;
+    overflow:hidden;
+        border-bottom:solid 1px #000;
+}
+
+.shipping-notice-banner:before {
+    position: absolute;
+    content: "";
+    background-image: url("https://www.digikey.com/-/media/Images/Header/Notice/components-red.png");
+    height:70px;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index:1001;
+}
+
+.shipping-notice-banner .header-shipping-msg.msg-short {
+    display:none;
+}
+
+/* Search Pages Only */
+.mini-msg .shipping-notice-banner .header-shipping-msg.msg-short {
+    display: block;
+}
+
+.mini-msg .shipping-notice-banner .header-shipping-msg.msg-tall {
+    display: none;
+}
+
+html body:not(.gdpr).shipping-msg {
+    margin-top:70px;
+    background-position:0px 70px;
+}
+
+@media screen and (max-width:1024px) {
+    html body:not(.gdpr).shipping-msg #header {
+        margin-top:70px;
+    }
+
+    html body:not(.gdpr).flymenu-toggle.shipping-msg .shipping-notice-banner {
+        z-index:99
+    }
+    
+    html body:not(.gdpr).flymenu-toggle.shipping-msg .menu-backdrop {
+        top:-70px;
+    }
+    
+    html body:not(.gdpr).flymenu-toggle.shipping-msg.mini-msg .menu-backdrop {
+        top:-36px;
+    }
+}
+
+@media print {
+        html body:not(.gdpr).shipping-msg {
+        margin-top:0px !important;
+        background-position:0px 0px;
+    }
+
+    .shipping-notice-banner {
+        display:none !important;
+    }
+}
+
+.header-shipping-msg {
+    height:70px;
+    width: 100%;
+    display: block;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-size:20px;
+    z-index: 1002;
+    position: absolute;
+    top:20px;
+}
+
+@media screen and (max-width:768px) {
+    .header-shipping-msg {
+        font-size:16px;
+        top:24px;
+    }
+}
+
+.header-shipping-msg a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header-shipping-msg img {
+    vertical-align: middle;
+    padding:0 10px 0 0;
+}
+
+    .rtl .header-shipping-msg img {
+        padding:0 0 0 10px;
+    }
+
+.header-shipping-msg-close {
+    position: absolute; 
+    top: 20px; 
+    right: 5px; 
+    width: 28px; 
+    height: 28px; 
+    padding: 0px; 
+    font-size: 26px; 
+    font-weight: normal; 
+    text-align: center; 
+    text-decoration: none; 
+    color: #fff; 
+    line-height: 28px;
+    z-index: 1003;
+    cursor: pointer;
+}
+
+    .rtl .header-shipping-msg-close {
+        left: 5px;
+    }
+
+.gdpr .shipping-notice-banner {
+    display: none !important;
+}
+
+
+
+/* Misc variations */
+#twoDayShippingModal .dk-table td {
+    text-align:left;
+}
+
+.text-color--green {
+    font-weight:bold;
+    color:green;
+}
+
+.new-price-text {
+    color: green;
+    font-weight: bold;
+    padding: 0 0 0 5px;
+}
+
+.diagonal-strike {
+    position: relative;
+    display: inline-block;
+}
+
+.diagonal-strike::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.diagonal-strike::before {
+    border-bottom: 2px solid red;
+    -webkit-transform: skewY(-10deg);
+    transform: skewY(-10deg);
+}

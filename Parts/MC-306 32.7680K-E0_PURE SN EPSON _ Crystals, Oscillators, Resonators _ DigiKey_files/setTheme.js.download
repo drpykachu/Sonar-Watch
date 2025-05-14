@@ -1,0 +1,120 @@
+function waitForElm(selector) {
+    return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+            return resolve(document.querySelector(selector));
+        }
+
+        const observer = new MutationObserver(mutations => {
+            if (document.querySelector(selector)) {
+                observer.disconnect();
+                resolve(document.querySelector(selector));
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    });
+}
+
+function setCookie(cName, cValue, expDays) {
+    let date = new Date();
+    date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+}
+
+var lang = (typeof __headerData === 'undefined') ? utag_data.page_language : __headerData.lang;
+var site = (typeof __headerData === 'undefined') ? utag_data.page_site : __headerData.site;
+let darkmodetext;
+let cookiedTheme = (document.cookie.match(/^(?:.*;)?\s*digikey_theme\s*=\s*([^;]+)(?:.*)?$/)||[,null])[1];
+let prefersDark =  window.matchMedia('(prefers-color-scheme: dark)');
+let skipTheme = document.querySelectorAll('meta[name="skipTheme"]').length !== 0;
+let currentTheme;
+
+function setTheme(newTheme) {
+    if (!newTheme) {
+        newTheme = document.body.classList.contains('dkdk')? "dklt" : "dkdk";
+    }
+    if (newTheme === "dkdk") {
+        document.body.classList.add("dkdk");
+    } else if (newTheme === "dklt") {
+        document.body.classList.remove("dkdk");
+    }
+    setCookie('digikey_theme', newTheme, 90);
+    localStorage.setItem('theme-preference', newTheme);
+}
+
+if (cookiedTheme) {
+   currentTheme = cookiedTheme;
+} else if (localStorage.getItem('theme-preference')) {
+   currentTheme = localStorage.getItem('theme-preference');
+} else {
+   currentTheme = 'dklt';
+}
+
+// if (cookiedTheme) {
+//     currentTheme = cookiedTheme;
+//  } else if (localStorage.getItem('theme-preference')) {
+//     currentTheme = localStorage.getItem('theme-preference');
+//  } else if (prefersDark.matches) {
+//     currentTheme = 'dkdk';
+//  } else {
+//     currentTheme = 'dklt';
+//  }
+
+if (skipTheme) {
+    console.log('Skip Theme');
+} else {
+
+    setTheme(currentTheme);
+
+    waitForElm('#my_digikey_links').then((elm) => {
+        const mydkDiv = document.querySelector(".dropdown--my-digikey");
+        let checkboxCode = `
+            <div class="darkmode-toggle" style="color:var(--text-color)">
+                <input
+                    onclick="setTheme()"
+                    ${currentTheme == "dkdk" ? "checked=true" : ""}
+                    type="checkbox"
+                    class="dk-checkbox--toggle"
+                    id="darkmode_toggle"
+                />
+                <label
+                    class="mr-1 dk-checkbox-label"
+                    for="darkmode_toggle"
+                    id="darkmode_toggle_label">
+                </label>
+            </div>
+        `
+        mydkDiv.insertAdjacentHTML("beforeend", checkboxCode);
+        if (localStorage.getItem('darkmodetext_'+lang)) {
+            darkmodetext = localStorage.getItem('darkmodetext_'+lang);
+            document.getElementById("darkmode_toggle_label").textContent = darkmodetext;
+        } else {
+            fetch("https://www.digikey.com/Services/Global/phrases.svc/rest/phrasev2/dark-mode?lang=" + lang + "&country="+ site, {
+                method: 'get'
+            })
+            .then(response => response.json())
+            .then(function(jsonData){
+                darkmodetext = jsonData;
+                localStorage.setItem("darkmodetext_"+lang, darkmodetext);
+                document.getElementById("darkmode_toggle_label").textContent = darkmodetext;
+            });
+        }
+    });
+
+    const addCSS = css => document.head.appendChild(document.createElement("style")).innerHTML=css;
+    addCSS(`
+        .darkmode-toggle{
+            color:var(--text-color);
+            padding:8px;
+            text-align:center;
+        }
+        #my_digikey_anon_links,
+        #my_digikey_links {
+            transition:none !important;
+        }
+    `)
+}

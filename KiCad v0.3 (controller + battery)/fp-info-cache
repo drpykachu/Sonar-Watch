@@ -1,4 +1,4 @@
-25214192524546024
+25226420265425672
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -13,6 +13,13 @@ audio belton reverb
 0
 7
 7
+BAT-HLD-003-SMT
+BAT_BAT-HLD-003-SMT
+
+
+0
+3
+3
 Battery
 BatteryClip_Keystone_54_D16-19mm
 Battery clip for batteries with a diameter between 16-19 mm: https://www.keyelco.com/product.cfm/product_id/826
@@ -57994,6 +58001,27 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+EVQ_P7K01P
+EVQ_P7K01P
+
+EVQ-P7K01P 
+0
+4
+4
+EVQ_P7K01P
+EVQ_P7K01P-L
+
+EVQ-P7K01P 
+0
+4
+4
+EVQ_P7K01P
+EVQ_P7K01P-M
+
+EVQ-P7K01P 
+0
+4
+4
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -66681,6 +66709,13 @@ Yellow 5381 Series LED
 0
 2
 2
+MC-306_32.7680K-E0_PURE_SN
+MC-306_32.7680K-E0_PURE_SN
+
+
+0
+4
+4
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -101282,6 +101317,20 @@ Varistor VF
 0
 2
 2
+WL-SMCC_0402
+Untitled
+
+
+0
+0
+0
+WL-SMCC_0402
+Untitled_1
+
+
+0
+0
+0
 WL-SMCC_0402
 WL-SMCC_0402
 
