@@ -446,11 +446,20 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "RN73H1JTTD5052F50",
+      "MC-306_32.7680K-E0_PURE_SN",
+      "B3U_1100P",
+      "MAX809SEUR+T",
+      "MCP73832T_2ACI_OT",
+      "IRLML6402TRPBF",
+      "TPS7A0225PDBVR",
+      "BAT-HLD-003-SMT"
+    ],
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "FullGrid.kicad_pro",
+    "filename": "TestWatch.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -477,24 +486,7 @@
     "meta": {
       "version": 4
     },
-    "net_colors": {
-      "A": "rgb(255, 0, 0)",
-      "B": "rgb(255, 64, 0)",
-      "C": "rgb(255, 128, 0)",
-      "D": "rgb(255, 191, 0)",
-      "E": "rgb(197, 193, 20)",
-      "F": "rgb(191, 255, 0)",
-      "G": "rgb(0, 255, 0)",
-      "H": "rgb(0, 255, 128)",
-      "I": "rgb(0, 175, 175)",
-      "J": "rgb(0, 191, 255)",
-      "K": "rgb(0, 0, 255)",
-      "L": "rgb(64, 0, 255)",
-      "M": "rgb(128, 0, 255)",
-      "N": "rgb(191, 0, 255)",
-      "O": "rgb(255, 0, 255)",
-      "P": "rgb(255, 0, 191)"
-    },
+    "net_colors": null,
     "netclass_assignments": null,
     "netclass_patterns": []
   },
@@ -506,7 +498,7 @@
       "plot": "GRBR/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "TestWatch.step",
       "svg": "",
       "vrml": ""
     },

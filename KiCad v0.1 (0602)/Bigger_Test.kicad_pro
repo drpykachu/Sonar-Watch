@@ -459,7 +459,9 @@
     }
   },
   "libraries": {
-    "pinned_footprint_libs": [],
+    "pinned_footprint_libs": [
+      "Connector_PinHeader_2.54mm"
+    ],
     "pinned_symbol_libs": []
   },
   "meta": {

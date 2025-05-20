@@ -1,4 +1,4 @@
-25226420265425672
+25250883461478657
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -13,8 +13,22 @@ audio belton reverb
 0
 7
 7
+B3U_1100P
+SW_B3U-1100P
+
+
+0
+3
+3
 BAT-HLD-003-SMT
 BAT_BAT-HLD-003-SMT
+
+
+0
+3
+3
+BAT-HLD-003-SMT
+BAT_BAT-HLD-003-SMT_CUT
 
 
 0
@@ -59079,6 +59093,13 @@ Fuse Fuseholder TR5 Littelfuse/Wickmann No. 460 No560
 0
 2
 2
+GRM21BC81E106ME51K
+CAPC2012X140N
+
+
+0
+2
+2
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
@@ -59219,6 +59240,13 @@ heatsink
 0
 0
 0
+IRLML6402TRPBF
+IRLML6402TRPBF
+
+
+0
+3
+3
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
@@ -66709,6 +66737,13 @@ Yellow 5381 Series LED
 0
 2
 2
+MAX809SEUR+T
+MAX809SEUR+T
+
+
+0
+3
+3
 MC-306_32.7680K-E0_PURE_SN
 MC-306_32.7680K-E0_PURE_SN
 
@@ -66716,6 +66751,13 @@ MC-306_32.7680K-E0_PURE_SN
 0
 4
 4
+MCP73832T_2ACI_OT
+SOT95P270X145-5N
+
+
+0
+5
+5
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet
@@ -90124,6 +90166,13 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
+RN73H1JTTD5052F50
+RN73H1JTTD5052F50
+
+
+0
+2
+2
 Relay_SMD
 Relay_2P2T_10x6mm_TE_IMxxG
 Signal Relay, 10x6mm, 2 Form C, Gull Wings, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Data+Sheet%7F108-98001%7FZ.1%7Fpdf%7FEnglish%7FENG_DS_108-98001_Z.1.pdf
@@ -92413,6 +92462,27 @@ rotary encoder illuminated switch vertical
 0
 9
 8
+SMAJ5.0A
+SMAJ5.0A
+
+SMAJ5.0A 
+0
+2
+2
+SMAJ5.0A
+SMAJ5.0A-L
+
+SMAJ5.0A 
+0
+2
+2
+SMAJ5.0A
+SMAJ5.0A-M
+
+SMAJ5.0A 
+0
+2
+2
 STM32G431KBT6
 QFP80P900X900X160-32N
 LQFP32
@@ -94513,6 +94583,27 @@ Logo WEEE
 0
 0
 0
+TPS7A0225PDBVR
+TPS7A0225PDBVR
+
+TPS7A0225PDBVR 
+0
+5
+5
+TPS7A0225PDBVR
+TPS7A0225PDBVR-L
+
+TPS7A0225PDBVR 
+0
+5
+5
+TPS7A0225PDBVR
+TPS7A0225PDBVR-M
+
+TPS7A0225PDBVR 
+0
+5
+5
 TerminalBlock
 TerminalBlock_Altech_AK300-2_P5.00mm
 Altech AK300 terminal block, pitch 5.0mm, 45 degree angled, see http://www.mouser.com/ds/2/16/PCBMETRC-24178.pdf
@@ -101318,12 +101409,19 @@ Varistor VF
 2
 2
 WL-SMCC_0402
+PROGPAD
+
+
+0
+1
+1
+WL-SMCC_0402
 Untitled
 
 
 0
-0
-0
+2
+2
 WL-SMCC_0402
 Untitled_1
 

@@ -1,0 +1,13 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "BAT-HLD-003-SMT")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/BAT-HLD-003-SMT/BAT-HLD-003-SMT.kicad_sym")(options "")(descr ""))
+  (lib (name "BAT-HLD-003-SMT_CUT")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/BAT-HLD-003-SMT/BAT-HLD-003-SMT_CUT.kicad_sym")(options "")(descr ""))
+  (lib (name "B3U-1100P")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/B3U_1100P/B3U-1100P.kicad_sym")(options "")(descr ""))
+  (lib (name "MCP73832T-2ACI_OT")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/MCP73832T_2ACI_OT/MCP73832T-2ACI_OT.kicad_sym")(options "")(descr ""))
+  (lib (name "GRM21BC81E106ME51K")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/GRM21BC81E106ME51K/GRM21BC81E106ME51K.kicad_sym")(options "")(descr ""))
+  (lib (name "SMAJ5.0A")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/SMAJ5.0A/SMAJ5.0A.kicad_sym")(options "")(descr ""))
+  (lib (name "TPS7A0225PDBVR")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/TPS7A0225PDBVR/KiCADv6/TPS7A0225PDBVR.kicad_sym")(options "")(descr ""))
+  (lib (name "RN73H1JTTD5052F50")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/RN73H1JTTD5052F50/RN73H1JTTD5052F50.kicad_sym")(options "")(descr ""))
+  (lib (name "MAX809SEUR_T")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/MAX809SEUR+T/MAX809SEUR_T.kicad_sym")(options "")(descr ""))
+  (lib (name "IRLML6402TRPBF")(type "KiCad")(uri "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/IRLML6402TRPBF/IRLML6402TRPBF.kicad_sym")(options "")(descr ""))
+)

@@ -69,7 +69,15 @@ void loop() {
 
     digitalWrite(pins[LOW_POS[i]],LOW);
     digitalWrite(pins[HIGH_POS[i]],HIGH);
-    delayMicroseconds(full_grid_brightness);
+
+    if (i == 101){
+      delayMicroseconds(full_grid_brightness*50);
+
+    }
+    else{
+      delayMicroseconds(full_grid_brightness);
+
+    }
 
     pinMode(pins[LOW_POS[i]], INPUT);
     pinMode(pins[HIGH_POS[i]], INPUT);    
