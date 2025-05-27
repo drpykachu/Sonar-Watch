@@ -12,3 +12,6 @@ STM32G431KBT6 (LQFP32)
 
 Oscillator:
 XTAL_MC-306_32.7680K-E0_PURE_SN
+
+Glass:
+https://www.amazon.com/JSLER-28mm-38mm-Replacement-Transparent-Accessories/dp/B0CFDZZRT1?th=1
