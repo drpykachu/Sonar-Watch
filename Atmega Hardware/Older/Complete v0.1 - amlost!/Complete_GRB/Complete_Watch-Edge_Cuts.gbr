@@ -1,0 +1,25 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,9.0.1*%
+%TF.CreationDate,2025-06-29T08:21:18-07:00*%
+%TF.ProjectId,Complete_Watch,436f6d70-6c65-4746-955f-57617463682e,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Profile,NP*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 9.0.1) date 2025-06-29 08:21:18*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,Profile*%
+%ADD10C,0.050000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+X242996441Y-78235686D02*
+X242996439Y-92764311D01*
+X242996439Y-92764311D02*
+G75*
+G02*
+X242996434Y-78235677I-16996439J7264311D01*
+G01*
+M02*

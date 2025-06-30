@@ -1,0 +1,12 @@
+(version 1)
+
+(rule "NO BURIED VIAS"
+    (constraint disallow buried_via)
+    (severity error))
+
+(rule "NO MICRO VIAS"
+    (constraint disallow micro_via)
+    (severity error))
+
+(rule "PCBWAY_Clearance"
+    (constraint clearance (min 0.22mm)))

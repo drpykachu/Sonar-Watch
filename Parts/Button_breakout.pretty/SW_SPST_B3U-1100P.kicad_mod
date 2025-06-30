@@ -1,0 +1,287 @@
+(footprint "SW_SPST_B3U-1100P"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Ultra-small-sized Tactile Switch with High Contact Reliability, Top-actuated Model, with Ground Terminal, without Boss")
+	(tags "Tactile Switch")
+	(property "Reference" "REF**"
+		(at 0 -3.3 0)
+		(layer "F.SilkS")
+		(uuid "d1ce3674-ca12-4ba1-8bff-9025e44a89f3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "B3U-1100P"
+		(at 0 2.67 0)
+		(layer "F.Fab")
+		(uuid "a52dc006-2133-43c4-ac98-6553605e5f0f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0d11bb30-0b79-4e54-a114-fdbc44a0e006")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7a55e096-135f-4a44-a60d-0e0f51f1d6dd")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MANUFACTURER" "Omron"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1fddfd0e-ce44-4cb6-915a-7700b7e0b828")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.65 -2.22)
+		(end 1.65 -2.22)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "25141684-daa0-490b-b590-b4c15e41a100")
+	)
+	(fp_line
+		(start -1.65 -1.93)
+		(end -1.65 -2.22)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7f7b079c-9901-4936-a56b-ed53ab6b1136")
+	)
+	(fp_line
+		(start -1.65 0.28)
+		(end -1.65 0.57)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e0ddc883-5e00-4f59-95a0-4e9a6f4949cc")
+	)
+	(fp_line
+		(start -1.65 0.57)
+		(end -0.65 0.57)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7cb78c18-8487-4c7e-bdd6-43ad9092a376")
+	)
+	(fp_line
+		(start 1.65 -2.22)
+		(end 1.65 -1.93)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5dcc196f-b542-432a-9b62-21fb06b6a076")
+	)
+	(fp_line
+		(start 1.65 0.57)
+		(end 0.65 0.57)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7a28b933-a187-4c4d-84c0-2f51bf7a01ae")
+	)
+	(fp_line
+		(start 1.65 0.57)
+		(end 1.65 0.28)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5428454c-214b-4f0b-979e-e46d19bb2741")
+	)
+	(fp_line
+		(start -2.4 -2.47)
+		(end -2.4 0.82)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f9e0cf39-844c-4dec-8038-fbb3f0693935")
+	)
+	(fp_line
+		(start -2.4 0.82)
+		(end -0.65 0.82)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "50344b15-5df1-4770-864e-2ada46713b33")
+	)
+	(fp_line
+		(start -0.65 0.82)
+		(end 2.4 0.82)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "93be3d10-9cff-4e99-a63c-6059562fa1e3")
+	)
+	(fp_line
+		(start 2.4 -2.47)
+		(end -2.4 -2.47)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9b0d243b-ada0-412c-984d-a30db3815614")
+	)
+	(fp_line
+		(start 2.4 0.82)
+		(end 2.4 -2.47)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "991a2612-bf17-424a-a025-d861c287a3fc")
+	)
+	(fp_line
+		(start -1.5 -2.08)
+		(end 1.5 -2.08)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "83eaa314-2d8c-4b59-ba4a-496313923e40")
+	)
+	(fp_line
+		(start -1.5 0.43)
+		(end -1.5 -2.08)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2b377209-ae49-4eac-95a2-df3185a8aaea")
+	)
+	(fp_line
+		(start 1.5 -2.08)
+		(end 1.5 0.43)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "69e52876-96fd-47f4-b87c-76b2cd24ef8a")
+	)
+	(fp_line
+		(start 1.5 0.43)
+		(end -1.5 0.43)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b2c9e10e-a4fa-4b52-b79a-da14628879dc")
+	)
+	(fp_circle
+		(center 0 -0.82)
+		(end 0.75 -0.82)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "8cfc1d56-62e3-496e-8928-e6439ffddfc6")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -3.3 0)
+		(layer "F.Fab")
+		(uuid "afc61f8d-fcf5-48f4-a8f4-5194ab1c0b76")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.7 -0.82)
+		(size 0.9 1.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7822600a-691d-4ce4-85c4-2cf2257d2861")
+	)
+	(pad "2" smd rect
+		(at 1.7 -0.82)
+		(size 0.9 1.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f3fa01bf-b93f-447a-ba8b-19635d1de446")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPST_B3U-1100P.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(model "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/B3U_1100P/B3U-1100P.step"
+		(offset
+			(xyz 0 1 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
+)

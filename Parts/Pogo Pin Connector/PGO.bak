@@ -7,7 +7,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "POGO"
-			(at 0 -1.27 0)
+			(at 0 -10.922 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51,8 +51,8 @@
 		)
 		(symbol "POGO_FEMALE_2_0_1"
 			(rectangle
-				(start -2.54 7.62)
-				(end 2.54 0)
+				(start -2.54 8.255)
+				(end 2.54 -8.255)
 				(stroke
 					(width 0)
 					(type default)
@@ -82,7 +82,7 @@
 				)
 			)
 			(pin input line
-				(at 5.08 1.27 180)
+				(at 5.08 0 180)
 				(length 2.54)
 				(name "USB_-"
 					(effects
@@ -92,6 +92,24 @@
 					)
 				)
 				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin input line
+				(at 5.08 -6.35 180)
+				(length 2.54)
+				(name "PROG"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
 					(effects
 						(font
 							(size 1.27 1.27)

@@ -1,0 +1,108 @@
+(pcb freerouting.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "9.0.1")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  164000 -80000  160000 -80000  160000 -74000  164000 -74000
+            164000 -80000)
+    )
+    (via "Via[0-1]_600:300_um")
+    (rule
+      (width 200)
+      (clearance 200)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component "Button_Switch_SMD:SW_SPST_B3U-1100P"
+      (place BUTT1 161179.809000 -76986.696000 front -90.000000 (PN "B3U-1100P"))
+    )
+  )
+  (library
+    (image "Button_Switch_SMD:SW_SPST_B3U-1100P"
+      (outline (path signal 120  -1650 -570  -650 -570))
+      (outline (path signal 120  1650 -570  650 -570))
+      (outline (path signal 120  1650 -570  1650 -280))
+      (outline (path signal 120  -1650 -280  -1650 -570))
+      (outline (path signal 120  -1650 1930  -1650 2220))
+      (outline (path signal 120  -1650 2220  1650 2220))
+      (outline (path signal 120  1650 2220  1650 1930))
+      (outline (path signal 50  -2400 -820  -650 -820))
+      (outline (path signal 50  -650 -820  650 -820))
+      (outline (path signal 50  650 -820  2400 -820))
+      (outline (path signal 50  2400 -820  2400 2470))
+      (outline (path signal 50  -2400 2470  -2400 -820))
+      (outline (path signal 50  2400 2470  -2400 2470))
+      (outline (path signal 100  -1500 -430  -1500 2080))
+      (outline (path signal 100  1500 -430  -1500 -430))
+      (outline (path signal 100  -1500 2080  1500 2080))
+      (outline (path signal 100  1500 2080  1500 -430))
+      (outline (path signal 100  0 1570  166.891 1551.2  325.413 1495.73  467.617 1406.37
+            586.374 1287.62  675.727 1145.41  731.196 986.891  750 820  731.196 653.109
+            675.727 494.587  586.374 352.383  467.617 233.626  325.413 144.273
+            166.891 88.804  0 70  -166.891 88.804  -325.413 144.273  -467.617 233.626
+            -586.374 352.383  -675.727 494.587  -731.196 653.109  -750 820
+            -731.196 986.891  -675.727 1145.41  -586.374 1287.62  -467.617 1406.37
+            -325.413 1495.73  -166.891 1551.2  0 1570))
+      (pin Rect[T]Pad_900.000000x1700.000000_um 1 -1700 820)
+      (pin Rect[T]Pad_900.000000x1700.000000_um 2 1700 820)
+    )
+    (padstack Rect[T]Pad_900.000000x1700.000000_um
+      (shape (rect F.Cu -450 -850 450 850))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:300_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net "unconnected-(BUTT1-Pad1)"
+      (pins BUTT1-1)
+    )
+    (net "unconnected-(BUTT1-Pad2)"
+      (pins BUTT1-2)
+    )
+    (class kicad_default "unconnected-(BUTT1-Pad1)" "unconnected-(BUTT1-Pad2)"
+      (circuit
+        (use_via "Via[0-1]_600:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+    (wire (path F.Cu 200  162855 -74500  163410 -75054.9)(net "unconnected-(BUTT1-Pad1)")(type route))
+    (wire (path F.Cu 200  160500 -74500  162855 -74500)(net "unconnected-(BUTT1-Pad1)")(type route))
+    (wire (path B.Cu 200  162866 -74500  160500 -74500)(net "unconnected-(BUTT1-Pad1)")(type route))
+    (wire (path B.Cu 200  163415 -75048.6  162866 -74500)(net "unconnected-(BUTT1-Pad1)")(type route))
+    (wire (path F.Cu 200  162888 -79500  163420 -78968.4)(net "unconnected-(BUTT1-Pad2)")(type route))
+    (wire (path F.Cu 200  160500 -79500  162888 -79500)(net "unconnected-(BUTT1-Pad2)")(type route))
+    (wire (path B.Cu 200  162500 -79500  160500 -79500)(net "unconnected-(BUTT1-Pad2)")(type route))
+    (wire (path B.Cu 200  162879 -79500  162500 -79500)(net "unconnected-(BUTT1-Pad2)")(type route))
+    (wire (path B.Cu 200  163415 -78964.5  162879 -79500)(net "unconnected-(BUTT1-Pad2)")(type route))
+    (via "Via[0-1]_600:300_um"  160500 -74500 (net "unconnected-(BUTT1-Pad1)")(type route))
+    (via "Via[0-1]_600:300_um"  160500 -79500 (net "unconnected-(BUTT1-Pad2)")(type route))
+  )
+)

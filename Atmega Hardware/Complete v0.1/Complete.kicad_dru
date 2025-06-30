@@ -1,0 +1,13 @@
+(version 1)
+
+(rule "NO BURIED VIAS"
+    (constraint disallow buried_via)
+    (severity error))
+
+(rule "NO MICRO VIAS"
+    (constraint disallow micro_via)
+    (severity error))
+
+(rule "Clearance between Pads of Different Nets"
+    (constraint clearance (min 0.225mm))
+    (condition "A.Type == 'Pad' && B.Type == 'Pad'"))
