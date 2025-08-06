@@ -94,4 +94,26 @@
 		(uuid "6a85c585-13a4-4f8c-b541-06d1b0c62dd3")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/Complete v2.0 3D models/STEP/button_board.step"
+		(offset
+			(xyz 0 0 2)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -90 -180)
+		)
+	)
+	(model "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/B3U_1100P/B3U-1100P.step"
+		(offset
+			(xyz -1 0 2)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -180 -90)
+		)
+	)
 )

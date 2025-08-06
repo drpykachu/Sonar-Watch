@@ -1,23 +1,179 @@
-
-(footprint RESC3116X65N (layer F.Cu) (tedit 6830FDE5)
-  (descr "")
-  (attr smd)
-  (fp_text reference REF** (at -0.96 -1.45 0) (layer F.SilkS)
-    (effects (font (size 0.393700787402 0.393700787402) (thickness 0.15)))
-  )
-  (fp_text value RESC3116X65N (at 0.79 1.45 0) (layer F.Fab)
-    (effects (font (size 0.393700787402 0.393700787402) (thickness 0.15)))
-  )
-  (pad 1 smd rect (at -1.48 0.0) (size 0.97 1.73) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
-  (pad 2 smd rect (at 1.48 0.0) (size 0.97 1.73) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
-  (fp_line (start 1.6 0.85) (end -1.6 0.85) (layer F.Fab) (width 0.127))
-  (fp_line (start 1.6 -0.85) (end -1.6 -0.85) (layer F.Fab) (width 0.127))
-  (fp_line (start 1.6 0.85) (end 1.6 -0.85) (layer F.Fab) (width 0.127))
-  (fp_line (start -1.6 0.85) (end -1.6 -0.85) (layer F.Fab) (width 0.127))
-  (fp_line (start -0.67 -0.85) (end 0.67 -0.85) (layer F.SilkS) (width 0.127))
-  (fp_line (start -0.67 0.85) (end 0.67 0.85) (layer F.SilkS) (width 0.127))
-  (fp_line (start -2.215 1.115) (end 2.215 1.115) (layer F.CrtYd) (width 0.05))
-  (fp_line (start -2.215 -1.115) (end 2.215 -1.115) (layer F.CrtYd) (width 0.05))
-  (fp_line (start -2.215 1.115) (end -2.215 -1.115) (layer F.CrtYd) (width 0.05))
-  (fp_line (start 2.215 1.115) (end 2.215 -1.115) (layer F.CrtYd) (width 0.05))
+(footprint "RC1206FR_07120KL"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -0.96 -1.45 0)
+		(layer "F.SilkS")
+		(uuid "d3a7140c-bdf1-4421-9ad8-3ea4998ef799")
+		(effects
+			(font
+				(size 0.393701 0.393701)
+				(thickness 0.098425)
+			)
+		)
+	)
+	(property "Value" "RESC3116X65N"
+		(at 0.79 1.45 0)
+		(layer "F.Fab")
+		(uuid "ea729654-091a-4544-9c15-cf3027e3465f")
+		(effects
+			(font
+				(size 0.393701 0.393701)
+				(thickness 0.098425)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e509063c-7e7a-402d-b4e1-fc9522238557")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "30e4fbbf-1d68-4ef4-9df9-093ed746bf73")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -0.67 -0.85)
+		(end 0.67 -0.85)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9251b335-7bf8-497b-b6d3-e075ef07db1c")
+	)
+	(fp_line
+		(start -0.67 0.85)
+		(end 0.67 0.85)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "443c45f7-a875-4bc0-b8de-0975f6fd22f4")
+	)
+	(fp_line
+		(start -2.215 -1.115)
+		(end 2.215 -1.115)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "17cf8742-ae98-4be5-822e-dcb960efc163")
+	)
+	(fp_line
+		(start -2.215 1.115)
+		(end -2.215 -1.115)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "c29f4af8-3cd5-4501-aede-697349ae6e27")
+	)
+	(fp_line
+		(start -2.215 1.115)
+		(end 2.215 1.115)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "880561a0-e2d0-481c-9b0b-6723d6221618")
+	)
+	(fp_line
+		(start 2.215 1.115)
+		(end 2.215 -1.115)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e6c930f8-276f-4175-b95c-44ab1a0e178e")
+	)
+	(fp_line
+		(start -1.6 0.85)
+		(end -1.6 -0.85)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "572856ae-d1b4-42d8-89f6-0bdddf4b102a")
+	)
+	(fp_line
+		(start 1.6 -0.85)
+		(end -1.6 -0.85)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "278561c9-07f2-46a5-8f21-a2a0ba26cae5")
+	)
+	(fp_line
+		(start 1.6 0.85)
+		(end -1.6 0.85)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f05bcb09-a4b5-432b-a380-07d777fdfe9f")
+	)
+	(fp_line
+		(start 1.6 0.85)
+		(end 1.6 -0.85)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6ef693ae-2534-4037-b38d-9f17e6f92a6d")
+	)
+	(pad "1" smd rect
+		(at -1.48 0)
+		(size 0.97 1.73)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "1066f786-7c6c-482e-b9d3-40fe6d4c86d5")
+	)
+	(pad "2" smd rect
+		(at 1.48 0)
+		(size 0.97 1.73)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "97175566-587d-4013-ab75-acac3933b164")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/RC1206FR_07120KL/RC1206FR-07120KL.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
 )

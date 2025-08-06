@@ -1,21 +1,159 @@
-
-(footprint RESC1508X55N (layer F.Cu) (tedit 6830FDE0)
-  (descr "")
-  (attr smd)
-  (fp_text reference REF** (at -0.21 -1.07 0) (layer F.SilkS)
-    (effects (font (size 0.393700787402 0.393700787402) (thickness 0.15)))
-  )
-  (fp_text value RESC1508X55N (at 1.54 1.07 0) (layer F.Fab)
-    (effects (font (size 0.393700787402 0.393700787402) (thickness 0.15)))
-  )
-  (pad 1 smd rect (at -0.76 0.0) (size 0.9 0.97) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
-  (pad 2 smd rect (at 0.76 0.0) (size 0.9 0.97) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
-  (fp_line (start 0.85 0.48) (end -0.85 0.48) (layer F.Fab) (width 0.127))
-  (fp_line (start 0.85 -0.48) (end -0.85 -0.48) (layer F.Fab) (width 0.127))
-  (fp_line (start 0.85 0.48) (end 0.85 -0.48) (layer F.Fab) (width 0.127))
-  (fp_line (start -0.85 0.48) (end -0.85 -0.48) (layer F.Fab) (width 0.127))
-  (fp_line (start -1.46 0.735) (end 1.46 0.735) (layer F.CrtYd) (width 0.05))
-  (fp_line (start -1.46 -0.735) (end 1.46 -0.735) (layer F.CrtYd) (width 0.05))
-  (fp_line (start -1.46 0.735) (end -1.46 -0.735) (layer F.CrtYd) (width 0.05))
-  (fp_line (start 1.46 0.735) (end 1.46 -0.735) (layer F.CrtYd) (width 0.05))
+(footprint "RMCF0603FT300K"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -0.21 -1.07 0)
+		(layer "F.SilkS")
+		(uuid "a2f412c1-d9d7-40de-97d7-0d3b3bf64e58")
+		(effects
+			(font
+				(size 0.393701 0.393701)
+				(thickness 0.098425)
+			)
+		)
+	)
+	(property "Value" "RESC1508X55N"
+		(at 1.54 1.07 0)
+		(layer "F.Fab")
+		(uuid "e942be9f-8b39-4ef6-8cec-6888711a8043")
+		(effects
+			(font
+				(size 0.393701 0.393701)
+				(thickness 0.098425)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "14ca9cd7-78c9-430b-932c-21401fb6371c")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f9e8533f-b58b-49c8-b29d-dd72b1706bb3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.46 -0.735)
+		(end 1.46 -0.735)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "0c480dd5-1276-417a-9363-4d8e709ac424")
+	)
+	(fp_line
+		(start -1.46 0.735)
+		(end -1.46 -0.735)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "99a7e45f-07dd-493a-9df1-97b454c31dd6")
+	)
+	(fp_line
+		(start -1.46 0.735)
+		(end 1.46 0.735)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "caeaa1e1-4394-4bc2-8e35-f1a414a0eb08")
+	)
+	(fp_line
+		(start 1.46 0.735)
+		(end 1.46 -0.735)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "fcdcb013-d4af-4404-b73d-8cf829f80b4f")
+	)
+	(fp_line
+		(start -0.85 0.48)
+		(end -0.85 -0.48)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b005b477-c98f-4953-8e0b-37b6e444e4cf")
+	)
+	(fp_line
+		(start 0.85 -0.48)
+		(end -0.85 -0.48)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "cdeaafd4-1261-4d29-857e-c21e0356b95c")
+	)
+	(fp_line
+		(start 0.85 0.48)
+		(end -0.85 0.48)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "da3e1439-b2f2-4b1b-823d-a7444c25ea65")
+	)
+	(fp_line
+		(start 0.85 0.48)
+		(end 0.85 -0.48)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d99ca87a-699a-4b31-a8a7-fe4ffc01c3eb")
+	)
+	(pad "1" smd rect
+		(at -0.76 0)
+		(size 0.9 0.97)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "2378cd2e-3c19-4143-bed7-01d9e58666c3")
+	)
+	(pad "2" smd rect
+		(at 0.76 0)
+		(size 0.9 0.97)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "4fb3dadc-1cf2-4bd7-bde4-afa474f93a4e")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/RMCF0603FT300K/RMCF0603FT300K.step"
+		(offset
+			(xyz 0 0.05 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
 )

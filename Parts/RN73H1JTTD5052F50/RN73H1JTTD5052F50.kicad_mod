@@ -1,21 +1,159 @@
-
-(footprint RESC1608X55N (layer F.Cu) (tedit 6826C93F)
-  (descr "")
-  (attr smd)
-  (fp_text reference REF** (at -0.26 -1.05 0) (layer F.SilkS)
-    (effects (font (size 0.393700787402 0.393700787402) (thickness 0.15)))
-  )
-  (fp_text value RESC1608X55N (at 1.49 1.05 0) (layer F.Fab)
-    (effects (font (size 0.393700787402 0.393700787402) (thickness 0.15)))
-  )
-  (pad 1 smd rect (at -0.814 0.0) (size 0.89 0.93) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
-  (pad 2 smd rect (at 0.814 0.0) (size 0.89 0.93) (layers F.Cu F.Mask F.Paste) (solder_mask_margin 0.102))
-  (fp_line (start 0.9 0.45) (end -0.9 0.45) (layer F.Fab) (width 0.127))
-  (fp_line (start 0.9 -0.45) (end -0.9 -0.45) (layer F.Fab) (width 0.127))
-  (fp_line (start 0.9 0.45) (end 0.9 -0.45) (layer F.Fab) (width 0.127))
-  (fp_line (start -0.9 0.45) (end -0.9 -0.45) (layer F.Fab) (width 0.127))
-  (fp_line (start -1.508 0.715) (end 1.508 0.715) (layer F.CrtYd) (width 0.05))
-  (fp_line (start -1.508 -0.715) (end 1.508 -0.715) (layer F.CrtYd) (width 0.05))
-  (fp_line (start -1.508 0.715) (end -1.508 -0.715) (layer F.CrtYd) (width 0.05))
-  (fp_line (start 1.508 0.715) (end 1.508 -0.715) (layer F.CrtYd) (width 0.05))
+(footprint "RN73H1JTTD5052F50"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -0.26 -1.05 0)
+		(layer "F.SilkS")
+		(uuid "4c7709d0-a4f0-400b-b4a8-d26abe8bcc68")
+		(effects
+			(font
+				(size 0.393701 0.393701)
+				(thickness 0.098425)
+			)
+		)
+	)
+	(property "Value" "RESC1608X55N"
+		(at 1.49 1.05 0)
+		(layer "F.Fab")
+		(uuid "7db9b53f-c07e-465d-b41b-f08df556ae1b")
+		(effects
+			(font
+				(size 0.393701 0.393701)
+				(thickness 0.098425)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c4a858b2-1cb8-4966-a626-ed150e9b3f66")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "18b29d53-049f-43bc-88a9-1f6b5a74a9e2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.508 -0.715)
+		(end 1.508 -0.715)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1393fe8c-7939-4705-851e-e3388a01a905")
+	)
+	(fp_line
+		(start -1.508 0.715)
+		(end -1.508 -0.715)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ec075e15-3ddc-4de3-a749-02da33a3b02b")
+	)
+	(fp_line
+		(start -1.508 0.715)
+		(end 1.508 0.715)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "337885ab-da70-4335-bf76-5cb67e0eea7f")
+	)
+	(fp_line
+		(start 1.508 0.715)
+		(end 1.508 -0.715)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "b675b36c-a823-4135-afbd-9f2281c9d886")
+	)
+	(fp_line
+		(start -0.9 0.45)
+		(end -0.9 -0.45)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d19d117c-786c-4311-a6ef-35268dd8a429")
+	)
+	(fp_line
+		(start 0.9 -0.45)
+		(end -0.9 -0.45)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "dbadce03-b0fe-4b11-bde5-cc454c9d9878")
+	)
+	(fp_line
+		(start 0.9 0.45)
+		(end -0.9 0.45)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "23ee94fa-28cd-4b7c-b041-99e6ba523ed3")
+	)
+	(fp_line
+		(start 0.9 0.45)
+		(end 0.9 -0.45)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f669f489-4915-42c9-bb4a-a26b2f452300")
+	)
+	(pad "1" smd rect
+		(at -0.814 0)
+		(size 0.89 0.93)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "c6a8db28-89d2-4e27-b116-9992b7b18087")
+	)
+	(pad "2" smd rect
+		(at 0.814 0)
+		(size 0.89 0.93)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.102)
+		(uuid "105bcb0b-bcd9-492b-b0cc-97061e880633")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/RN73H1JTTD5052F50/RN73H1JTTD5052F50.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
 )
