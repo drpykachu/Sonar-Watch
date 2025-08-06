@@ -18,5 +18,5 @@
   <br/>
   <img src="assets/Back_Cover.jpg" alt="Back (closed)" width="400"/>
   <br/>
-  <img src="Charge_port.jpg" alt="Magnetic Charging Port" width="400"/>
+  <img src="assets/Charge_port.jpg" alt="Magnetic Charging Port" width="400"/>
 </div>
