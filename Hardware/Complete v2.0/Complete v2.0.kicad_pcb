@@ -34573,6 +34573,7 @@
 		)
 		(embedded_fonts no)
 		(model "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/BAT-HLD-003-SMT/BAT-HLD-003-SMT_CUT.step"
+			(opacity 0.0000)
 			(offset
 				(xyz 0 1 0)
 			)
@@ -34584,7 +34585,7 @@
 			)
 		)
 		(model "C:/Users/Pyka/Documents/GitHub/Sonar-Watch/Parts/LIR2032/LIR2032.STEP"
-			(opacity 0.5800)
+			(opacity 0.0000)
 			(offset
 				(xyz 0 1 3)
 			)
