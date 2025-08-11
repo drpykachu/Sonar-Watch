@@ -67,8 +67,8 @@ def pattern(diameter,cut,inside_margin_out,inner_cut):
                     LED_count +=1
                     
         grid = grid+line + '\n'
-#     print(grid)
-    print(lit_LED)
+    print(grid)
+#     print(lit_LED)
 
 diameter = 15
 cut = 3
@@ -82,7 +82,7 @@ margin_array   =  [1,2,3,4,5,6,7,8,9,10,11,12,13]
 inner_cut_array = [0,1,2,3,4,5,6,7,8,9,10,11,12]
 # print('\n'*10)
 for i in range(0,len(inner_cut_array)):
-#     clear()
+    clear()
     pattern(diameter,cut,margin_array[i],inner_cut_array[i])
     
     time.sleep(0.15)
