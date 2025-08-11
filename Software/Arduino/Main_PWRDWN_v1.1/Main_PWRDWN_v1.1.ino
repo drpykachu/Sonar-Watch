@@ -85,23 +85,22 @@ void loop() {
   if (options_mode == true) {
 
     All_flash(0.05, 100, 3);
-    
-    // //////////// Battery module
-    // if (options_mode = true){
-    //  Mod_Battery();    options_section = true;}
-    // //////////// Brightness module
-    // if (options_mode = true){
-    //   Mod_Brightness(); options_section = true;}
-    // //////////// Hour module
-    // if (options_mode = true){
-    //   Mod_Hour();    options_section = true;}
-    // //////////// Minute Module
-    // if (options_mode = true){
-    //   Mod_Minute();    options_section = true;}
-    // ////////// Clocktype Module
-    // if (options_mode = true){
-    //   Mod_ClockMode();    options_section = true;}
 
+    //////////// Battery module
+    if (options_mode = true){
+     Mod_Battery();    options_section = true;}
+    //////////// Brightness module
+    if (options_mode = true){
+      Mod_Brightness(); options_section = true;}
+    //////////// Hour module
+    if (options_mode = true){
+      Mod_Hour();    options_section = true;}
+    //////////// Minute Module
+    if (options_mode = true){
+      Mod_Minute();    options_section = true;}
+    ////////// Clocktype Module
+    if (options_mode = true){
+      Mod_ClockMode();    options_section = true;}
 
     ////////// Wristtype Module
     // if (options_mode = true){
@@ -111,7 +110,7 @@ void loop() {
     options_mode = false;
     All_flash(0.05, 100, 3);
 
-    Crab_Timer(1000);
+    Crab_Timer(2000);
 
     delay(50);
   }
