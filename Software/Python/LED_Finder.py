@@ -1,6 +1,8 @@
 from tkinter import *
+from tkinter import filedialog
 import ctypes
 import pyperclip
+import ast
 
 user32 = ctypes.windll.user32
 user32.SetProcessDPIAware()
@@ -9,6 +11,46 @@ user32.SetProcessDPIAware()
 
 
 ##### Functions
+
+def save_file():
+    file_path = filedialog.asksaveasfilename(
+        defaultextension=".txt",  # Default extension if none is provided by the user
+        filetypes=[
+            ("Text files", "*.txt"),
+            ("All files", "*.*")
+        ]
+    )
+    
+    copy_list = []    
+    for key in buttons_dict:
+        colorer = buttons_dict[key].cget("bg")
+        if colorer == 'green':
+            copy_list.append(key)
+            
+            
+    with open(file_path, "w") as file:
+        file.write(python_to_c(copy_list))
+
+def open_file():
+
+    file_path = filedialog.askopenfilename(
+        title="Select a File",
+        initialdir="/",  # Optional: set initial directory
+        filetypes=(("Text files", "*.txt"), ("All files", "*.*"))  # Optional: filter file types
+    )
+    
+    with open(file_path, 'r') as file:
+        for line in file:
+            liner = line.strip()
+    liner = liner.replace("const int ROW[] = {", "[")
+    liner = liner.replace("};", "]")
+    lst = ast.literal_eval(liner)
+    
+    clear_all()
+    for key in buttons_dict:
+        if key in lst:
+            buttons_dict[key].config(bg='green') 
+
 def on_closing():
     filespace.destroy()
     
@@ -59,8 +101,8 @@ filespace.geometry("+{}+{}".format(-10,0))
 
 menubar = Menu(filespace)
 filemenu = Menu(menubar, tearoff = 0)
-filemenu.add_command(label="Save To File")
-filemenu.add_command(label="Open Previous")
+filemenu.add_command(label="Save To File", command = save_file)
+filemenu.add_command(label="Open Previous", command = open_file)
 menubar.add_cascade(label="File", menu=filemenu)
 
 clear_frame = Frame(filespace)

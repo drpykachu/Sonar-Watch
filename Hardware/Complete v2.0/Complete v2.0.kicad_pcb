@@ -36418,7 +36418,7 @@
 		(property "Reference" "U2"
 			(at 0 6.05 0)
 			(layer "B.SilkS")
-			(uuid "bee5099b-891e-42b0-b12a-241657f0e132")
+			(uuid "7b970c21-12bb-44de-9ca6-7776a8322130")
 			(effects
 				(font
 					(size 1 1)
@@ -36430,7 +36430,7 @@
 		(property "Value" "ATMEGA4808-AU"
 			(at 0 -6.05 0)
 			(layer "B.Fab")
-			(uuid "c2afb9eb-08aa-44eb-8947-0ab5f2cedc33")
+			(uuid "be769d69-f6be-41e0-872b-df0843e3d69e")
 			(effects
 				(font
 					(size 1 1)
@@ -36444,7 +36444,7 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "e52ab1bf-574d-438d-bf7d-6f700a2b24c2")
+			(uuid "42d83cd5-4bf8-469d-9d8f-77b7bbd7d326")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36458,7 +36458,7 @@
 			(unlocked yes)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "7551d27b-a3a1-4013-a229-a634682d9e57")
+			(uuid "c315ef17-4faa-437d-9dfb-f7d59132003e")
 			(effects
 				(font
 					(size 1.27 1.27)

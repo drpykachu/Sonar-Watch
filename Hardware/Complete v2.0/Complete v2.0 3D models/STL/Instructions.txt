@@ -1,0 +1,3 @@
+ Print button, support, pogo support, and back with normal settings
+
+Print everything else with watch setting
