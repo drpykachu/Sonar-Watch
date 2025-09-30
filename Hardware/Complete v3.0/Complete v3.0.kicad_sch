@@ -3762,7 +3762,7 @@
 	)
 	(text "black\n"
 		(exclude_from_sim no)
-		(at 221.996 84.582 0)
+		(at 222.758 66.802 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3789,16 +3789,6 @@
 			)
 		)
 		(uuid "b977b343-9b32-4710-9907-e429b9ded07e")
-	)
-	(text "Line on component goes here"
-		(exclude_from_sim no)
-		(at 221.742 69.85 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "bc9c4727-46c4-469a-9c5f-db3cb2307eaf")
 	)
 	(text "5V"
 		(exclude_from_sim no)
@@ -3832,7 +3822,7 @@
 	)
 	(text "red"
 		(exclude_from_sim no)
-		(at 222.25 67.056 0)
+		(at 222.25 84.836 0)
 		(effects
 			(font
 				(size 1.27 1.27)

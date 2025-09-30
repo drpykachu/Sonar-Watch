@@ -73267,7 +73267,7 @@
 			)
 		)
 	)
-	(gr_text "Line on component goes here"
+	(gr_text "Follow schematic guidance"
 		(at 238.5 106.5 0)
 		(layer "User.1")
 		(uuid "e660e30a-cc7f-4794-822f-19bc8574c1c8")
