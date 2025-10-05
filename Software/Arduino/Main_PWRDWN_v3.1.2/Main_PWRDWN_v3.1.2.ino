@@ -9,12 +9,12 @@
 // === Flags ===
 volatile bool wake_flag = false;
 volatile bool CHG_flag = false;
-volatile bool wdt_flag = false;   // <-- New flag for watchdog wake
+volatile bool wdt_flag = false;  // <-- New flag for watchdog wake
 
 // === Pins ===
 const int SCL_PIN = 3;
 const int Bat_ON = 21;
-const int Button = 22;     // PF2 (pin 2 on Arduino pinout — confirm on your board)
+const int Button = 22;  // PF2 (pin 2 on Arduino pinout — confirm on your board)
 const int RTC_WAKE = 23;
 const int Charge_STAT = 14;
 const int Bat_READ = A11;  // 25
@@ -38,8 +38,8 @@ int charge = 1;
 unsigned long fade_duration = 1000;
 unsigned long charge_timer = 1000;
 
-unsigned long battery_ticks = 0;   // Counts watchdog cycles (~8s each)
-const unsigned long batteryTarget = 450; // 450×8s ≈ 1 hour
+unsigned long battery_ticks = 0;          // Counts watchdog cycles (~8s each)
+const unsigned long batteryTarget = 450;  // 450×8s ≈ 1 hour
 
 int NaN = -1;
 int life_start = true;
@@ -70,18 +70,33 @@ void setup() {
   SLPCTRL.CTRLA = SLPCTRL_SMODE_PDOWN_gc | SLPCTRL_SEN_bm;
 
   // --- Watchdog setup (8s interval) ---
-  _PROTECTED_WRITE(WDT.CTRLA, 0); // Disable first, safe change
+  _PROTECTED_WRITE(WDT.CTRLA, 0);  // Disable first, safe change
   _PROTECTED_WRITE(WDT.CTRLA,
-                   WDT_PERIOD_8KCLK_gc   | // 8-second period
-                  //  WDT_ENABLE_bm         | // Enable WDT
-                   WDT_WINDOW_OFF_gc);     // Disable window mode
-  WDT.STATUS = 0; // Clear sync busy flag (safety)
+                   WDT_PERIOD_8KCLK_gc |  // 8-second period
+                                          //  WDT_ENABLE_bm         | // Enable WDT
+                     WDT_WINDOW_OFF_gc);  // Disable window mode
+  WDT.STATUS = 0;                         // Clear sync busy flag (safety)
   // WDT.INTCTRL = WDT_INTMODE_bm;  // Enable interrupt mode
 
-  sei(); // Enable global interrupts
+  sei();  // Enable global interrupts
 }
 
 void loop() {
+
+  // --- Wake from watchdog (~8s cycle) ---
+  if (wdt_flag) {
+    wdt_flag = false;
+    battery_ticks++;
+    if (battery_ticks >= batteryTarget) {  // ~1 hour elapsed
+      battery_ticks = 0;
+      charge = analogRead(Bat_READ);
+      float voltage = charge * (3.0 / 1023.0);  // assuming 3.3V reference
+      if (voltage <= 2.0) {
+        digitalWrite(Bat_ON, LOW);
+      }
+    }
+  }
+
   // --- Wake from charger ---
   if (CHG_flag) {
     CHG_flag = false;
@@ -98,7 +113,7 @@ void loop() {
     now = rtc.now();
     hour = now.hour();
     minute = now.minute();
-    pinMode(RTC_WAKE, HIGH); // Power down DS3231
+    pinMode(RTC_WAKE, HIGH);  // Power down DS3231
 
     if (hour >= 12) hour -= 12;
 
@@ -106,23 +121,58 @@ void loop() {
       Ring_Execute(hour, minute);
     } else {
       Clock_Execute(hour, minute);
-    } 
-  }
-
-  // --- Wake from watchdog (~8s cycle) ---
-  if (wdt_flag) {
-    wdt_flag = false;
-    battery_ticks++;
-    if (battery_ticks >= batteryTarget) { // ~1 hour elapsed
-      battery_ticks = 0;
-      charge = analogRead(Bat_READ);
-      float voltage = charge * (3.0 / 1023.0);  // assuming 3.3V reference
-      if (voltage <= 2.0) {
-        digitalWrite(Bat_ON, LOW);
-      } 
     }
   }
 
+  options_mode = Hold_Timer(1000);
+  if (options_mode == true) {
+
+    All_flash(0.05, 100, 3);
+
+    //////////// Battery module
+    if (options_mode = true) {
+      press_count = -1;
+      Mod_Battery();
+      options_section = true;
+    }
+    //////////// Brightness module
+    if (options_mode = true) {
+      Mod_Brightness();
+      options_section = true;
+    }
+    //////////// Hour module
+    if (options_mode = true) {
+      Mod_Hour();
+      options_section = true;
+    }
+    //////////// Minute Module
+    if (options_mode = true) {
+      Mod_Minute();
+      options_section = true;
+    }
+    ////////// Clocktype Module
+    if (options_mode = true) {
+      Mod_ClockMode();
+      options_section = true;
+    }
+
+    ////////// Wristtype Module
+    if (options_mode = true) {
+      Mod_WristMode();
+      options_section = true;
+    }
+
+    ////////////// Closes Modules
+    options_mode = false;
+    All_flash(0.05, 100, 3);
+
+    Crab_Timer(2000);
+
+    delay(50);
+  }
+
+
+ 
   // --- Enter power-down ---
   __asm__ __volatile__("sleep");
 }
@@ -143,5 +193,5 @@ ISR(PORTD_PORT_vect) {
 
 // === Watchdog Interrupt ===
 ISR(WDT_vect) {
-  wdt_flag = true; // Set flag so loop() can handle it
+  wdt_flag = true;  // Set flag so loop() can handle it
 }
