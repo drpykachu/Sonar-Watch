@@ -69789,6 +69789,16 @@
 		(uuid "41e3cd22-4c4d-43bc-af30-b5630d1cd045")
 	)
 	(gr_line
+		(start 206 102)
+		(end 212.5 90.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "User.1")
+		(uuid "e8a1aa0e-edfc-4686-9a7a-d96fe30174e0")
+	)
+	(gr_line
 		(start 244 85.5)
 		(end 226 85.5)
 		(stroke
@@ -73265,6 +73275,18 @@
 					(xy 214.101629 73.610462) (xy 214.293237 73.610462)
 				)
 			)
+		)
+	)
+	(gr_text "Removed resistor for \ntesting bat life after \n0 charge\n"
+		(at 199 108 0)
+		(layer "User.1")
+		(uuid "1915819a-69f9-43c6-a398-007dd407e8a3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
 		)
 	)
 	(gr_text "Follow schematic guidance"

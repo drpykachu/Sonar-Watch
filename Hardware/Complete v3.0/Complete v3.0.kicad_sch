@@ -3632,7 +3632,7 @@
 	)
 	(text "Charge_STAT and BUTT need to be \nconnected to a Px2 pin to wake\nthe Atmega4808 from deep sleep."
 		(exclude_from_sim no)
-		(at 452.12 95.25 0)
+		(at 457.2 91.694 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3700,6 +3700,16 @@
 		)
 		(uuid "31d4a7d7-1174-4593-b3a1-e566f87b0641")
 	)
+	(text "Line cut from ground\nconnected to PFO - \n- to use GPIO"
+		(exclude_from_sim no)
+		(at 216.916 113.03 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "32ae1002-1b19-4c24-b99b-3e7d806454f9")
+	)
 	(text "number"
 		(exclude_from_sim no)
 		(at 221.742 75.946 90)
@@ -3749,6 +3759,16 @@
 			)
 		)
 		(uuid "87a0ad82-f92c-4751-b619-cd0539e51090")
+	)
+	(text "Connected to R6"
+		(exclude_from_sim no)
+		(at 449.072 111.252 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9445c825-c341-4474-99a3-6596c31994e2")
 	)
 	(text "drain"
 		(exclude_from_sim no)
@@ -6249,8 +6269,8 @@
 		(uuid "d20dfcdb-1cfd-4509-8fc6-54dcd63d8542")
 	)
 	(no_connect
-		(at 403.86 96.52)
-		(uuid "e233295b-b9fd-4cd3-a19c-8352e887c0cf")
+		(at 448.31 107.95)
+		(uuid "e4b9a76b-8c59-4b37-b8e0-1eb73e004098")
 	)
 	(no_connect
 		(at 403.86 68.58)
@@ -8689,6 +8709,16 @@
 			(type default)
 		)
 		(uuid "2d0935b6-f346-407b-ba49-1e9b38c432ee")
+	)
+	(wire
+		(pts
+			(xy 403.86 96.52) (xy 448.31 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d82fc4f-e500-4eff-94a2-4096bd80ff15")
 	)
 	(wire
 		(pts
@@ -14339,6 +14369,16 @@
 			(type default)
 		)
 		(uuid "9be72f0d-f901-4d37-847f-47c9613e7226")
+	)
+	(wire
+		(pts
+			(xy 448.31 96.52) (xy 448.31 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bf54aa2-ad10-4b6a-a378-c7d9cb876347")
 	)
 	(wire
 		(pts
