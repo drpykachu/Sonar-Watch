@@ -68,21 +68,32 @@ void setup() {
   PORTD.INTFLAGS = PIN2_bm;
 
   // === Configure Voltage Level Monitor (VLM) ===
-  // Set threshold level to 2.6V (BODLEVEL1)
+  // Set threshold level to 2.6V (BODLEVEL2)
   // Use “below” mode — triggers when Vcc falls below this level
+  BOD.INTFLAGS = BOD_VLMIF_bm;  // Clear pending
+  BOD.INTCTRL  = BOD_VLMIE_bm;  // Enable interrupt
+
+
   BOD.VLMCTRLA = BOD_LVL_BODLEVEL2_gc | BOD_VLMCFG_BELOW_gc | BOD_VLMLVL_15ABOVE_gc;
 
-  // Gives the controller the chance to wake up frst
-  delay(500);  // or even 1000 ms
 
-  // Enable VLM interrupt 
+  // --- Enable VLM interrupt ---
   BOD.INTCTRL = BOD_VLMIE_bm;
 
-  // Clear any existing flags
+  // --- Clear any existing flags ---
   BOD.INTFLAGS = BOD_VLMIF_bm;
+
+  // === Configure BOD to lowest power sampled mode (125 Hz) ===
+  // Bits: SAMPFREQ=1 (125 Hz), ACTIVE=sampled (0x2), SLEEP=sampled (0x2)
+  // CCP = CCP_IOREG_gc;  // Allow protected register write
+  // BOD.CTRLA = (0x1 << BOD_SAMPFREQ_bp) | (0x2 << BOD_ACTIVE_gp) | (0x2 << BOD_SLEEP_gp);
+
+  // Give controller time to stabilize before sleep
+  delay(1000);
 
   // --- Sleep setup ---
   SLPCTRL.CTRLA = SLPCTRL_SMODE_PDOWN_gc | SLPCTRL_SEN_bm;
+
   sei();  // Enable global interrupts
 }
 
@@ -151,14 +162,18 @@ ISR(PORTD_PORT_vect) {
 // === Voltage Level Monitor Interrupt ===
 ISR(BOD_VLM_vect) {
   BOD.INTFLAGS = BOD_VLMIF_bm;
-
-  // Only cut power if we’re not charging
   if (digitalRead(Charge_STAT) == HIGH) {
-    digitalWrite(Bat_ON, LOW);
-    for (uint16_t colCnt = 0; colCnt < 5000; colCnt++) {
-      LED_ON(1, 5, 1000, false);
-    }
-    __asm__ __volatile__("sleep");
+  
+  digitalWrite(Bat_ON, LOW);
+  for (uint16_t colCnt = 0; colCnt < 1000; colCnt++) {
+    LED_ON(1, 5, 1000, false);
+    
   }
+  __asm__ __volatile__("sleep");
+  }
+
+  digitalWrite(Bat_ON, HIGH);
+  
+
 }
 

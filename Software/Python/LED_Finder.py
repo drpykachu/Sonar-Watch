@@ -4,7 +4,8 @@ import ctypes
 import pyperclip
 import ast
 
-user32 = ctypes.windll.user32
+user32 =
+ctypes.windll.user32
 user32.SetProcessDPIAware()
 [screen_width_init, screen_heigth_init] = [user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)]
 

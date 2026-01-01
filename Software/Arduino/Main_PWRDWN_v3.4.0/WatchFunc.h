@@ -26,6 +26,7 @@ extern int NaN;
 extern int alive_xy[15][15];
 extern int life_xy[15][15];
 extern int press_count;
+extern float volt_cutoff;
 
 //////////////////////////////////////////////////////////////// LED CONTROL FUNCTION
 void LED_ON(int LED, int brightness, int timer, bool dummy) {
@@ -291,20 +292,60 @@ void CHG_flash(int repeat) {
   }
 }
 
-//////////////////////////////////////////////////////////////// Flash ALL
-void All_flash(float duration, int brightness, int repeat) {
+
+//////////////////////////////////////////////////////////////// Flash BYE
+
+void BYE_flash(float duration, int brightness, int repeat) {
+ 
+  const int BYE[] = {49, 50, 51, 54, 58, 60, 61, 62, 63, 64, 67, 69, 73, 75, 79, 82, 85, 87,
+  90, 94, 96, 101, 105, 106, 107, 108, 109, 112, 116, 120, 124, 127, 131, 135, 139, 140, 141, 146, 150, 151, 152, 153};
+
+
+  RINGS BYEMatrix[] =
+  {  {BYE, NUMELEMENTS(BYE)}};
+
 
   for (int i = 0; i < repeat; i++) {
     unsigned long flash_start = millis();
     while (millis() - flash_start < duration * 1000) {
-
-      // BLANK
-      for (int i = 0; i < LED_count; i++) {
-        LED_ON(i, brightness, 50, false);
+      for (int f = 0; f < BYEMatrix[0].numElements; f++) {
+        LED_ON(BYEMatrix[0].pins[f], brightness, 50, false);
       }
     }
+    delay(100);
+  }
+}
 
 
+//////////////////////////////////////////////////////////////// Flash ALL
+void All_flash(float duration, int brightness, int repeat) {
+ 
+  const int sans[] = {2, 3, 4, 5, 6, 7, 8, 10, 11, 19, 20, 21, 33, 35, 47, 49, 50, 63, 64, 67, 68, 69, 
+  73, 74, 75, 78, 79, 82, 83, 84, 88, 89, 90, 93, 94, 95, 97, 98, 99, 101, 103, 104, 105, 107, 108, 111,
+  115, 116, 117, 121, 124, 125, 127, 135, 137, 138, 139, 142, 143, 144, 145, 146, 147, 148, 149, 150, 153, 
+  154, 155, 158, 160, 162, 164, 167, 168, 169, 170, 173, 174, 175, 176, 177, 180, 181, 182, 183, 184, 190, 
+  191, 192, 194, 195, 196, 197, 198, 199, 200};
+
+
+  RINGS SansMatrix[] =
+  {  {sans, NUMELEMENTS(sans)}};
+
+
+  for (int i = 0; i < repeat; i++) {
+    unsigned long flash_start = millis();
+
+    while (millis() - flash_start < duration * 1000) {
+      if(i != 1){
+        for (int f = 0; f < LED_count; f++) {
+          LED_ON(f, brightness, 50, false);
+        }
+      }
+      else{
+        for (int f = 0; f < SansMatrix[0].numElements; f++) {
+          LED_ON(SansMatrix[0].pins[f], brightness, 50, false);
+        }
+      }
+    }
     delay(100);
   }
 }
@@ -678,7 +719,65 @@ void Mod_ClockMode() {
   }
 }
 
+// function to linear interpolate the battery percentage
+struct Point {
+  float v;   // voltage
+  float pct; // percentage
+};
 
+const Point curve[] = {
+  {3.000, 99},
+  {2.960, 98},
+  {2.928, 97},
+  {2.896, 95},
+  {2.873, 93},
+  {2.835, 89},
+  {2.806, 86},
+  {2.759, 82},
+  {2.733, 78},
+  {2.710, 73},
+  {2.677, 68},
+  {2.663, 63},
+  {2.648, 57},
+  {2.640, 51},
+  {2.620, 43},
+  {2.620, 35},
+  {2.617, 28},
+  {2.608, 20},
+  {2.579, 15},
+  {2.547, 11},
+  {2.512, 6},
+  {2.422, 3},
+  {2.286, 0}
+};
+
+const int CURVE_SIZE = sizeof(curve) / sizeof(curve[0]);
+int batteryPercent(float voltage) {
+  // Clamp high
+  if (voltage >= curve[0].v) return (int)curve[0].pct;
+
+  // Clamp low
+  if (voltage <= curve[CURVE_SIZE - 1].v) return (int)curve[CURVE_SIZE - 1].pct;
+
+  // Find interval
+  for (int i = 0; i < CURVE_SIZE - 1; i++) {
+    if (voltage <= curve[i].v && voltage >= curve[i + 1].v) {
+
+      float v1 = curve[i].v;
+      float p1 = curve[i].pct;
+      float v2 = curve[i + 1].v;
+      float p2 = curve[i + 1].pct;
+
+      // Linear interpolation
+      float t = (voltage - v2) / (v1 - v2);
+      float pct = p2 + t * (p1 - p2);
+
+      return (int)(pct + 0.5f);  // round to nearest whole %
+    }
+  }
+
+  return 0;
+}
 
 void Mod_Battery() {
   int threshold_ms = 100;
@@ -711,17 +810,16 @@ void Mod_Battery() {
     float voltage = charge * (3.0 / 1023.0);  // assuming 3.3V reference
     int charge_percent;
 
-    if (voltage <= 2.0) {
+    if (voltage <= volt_cutoff) {
       charge_percent = 0;
       // digitalWrite(Bat_ON, LOW); // VLM should take vare of it
     } else if (voltage >= 3.0) {
       charge_percent = 99;
     } else {
-      charge_percent = (voltage - 2.0) * (99.0 / (3.0 - 2.0));
+      charge_percent = batteryPercent(voltage);
     }
 
-    charge_percent = map(charge_percent, 20, 99, 0, 99);
-    if (charge_percent < 1) charge_percent = 1;
+    if (charge_percent < 1) charge_percent = 0;
 
     int charge_dig_l = charge_percent / 10;
     int charge_dig_r = charge_percent % 10;

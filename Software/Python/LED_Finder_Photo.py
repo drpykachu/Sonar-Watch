@@ -119,7 +119,7 @@ grid_height = diameter * (btn_size + btn_spacing)
 filespace.geometry(f"{grid_width+40}x{grid_height+160}")
 
 # Original background image
-bg_image = Image.open("Capture.PNG")
+bg_image = Image.open("sans.PNG")
 bg_image = bg_image.resize((grid_width, grid_height), Image.LANCZOS)
 
 canvas = Canvas(filespace, width=grid_width, height=grid_height, highlightthickness=0)
@@ -156,3 +156,5 @@ for y in range(diameter):
 
 filespace.protocol("WM_DELETE_WINDOW", on_closing)
 filespace.mainloop()
+
+
