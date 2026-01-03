@@ -100,30 +100,56 @@ void loop() {
     Minute_flag = false;
 
 
-    int charge_2 = analogRead(Bat_READ);
-    float voltage_2 = charge_2 * (3.0 / 1023.0);  // assuming 3.3V reference
-    float charge_percent_2 = batteryPercent(voltage_2);
-    read_timer = charge_percent_2;
-    
-    for(int i =0; i < 500; i++){
-      LED_ON(1, 5, 1000, false); // for testing purposes
-    }
-
     // Power the divider briefly
     pinMode(Bat_READ_GND, OUTPUT);
     digitalWrite(Bat_READ_GND, LOW);
+    delay(50); 
+
+  ///////////////////////////////////////////// TESTING - TO DISPLAY PERCENTAGE AT TEST /////////////////////////////////////////////
+  
+    int charge_test = analogRead(Bat_READ);
+    float voltage_test = charge_test * (3.0 / 1023.0);  // assuming 3.3V reference
+    int charge_percent_test = batteryPercent(voltage_test);
+    read_timer = charge_percent_test;
+
+    if (voltage_test <= volt_cutoff) {
+      charge_percent_test = 0;
+      // digitalWrite(Bat_ON, LOW); // VLM should take vare of it
+    } else if (voltage_test >= 3.0) {
+      charge_percent_test = 99;
+    } else {
+      charge_percent_test = batteryPercent(voltage_test);
+    }
+
+    if (charge_percent_test < 1) charge_percent_test = 0;
+
+    int charge_dig_l_test = charge_percent_test / 10;
+    int charge_dig_r_test = charge_percent_test % 10;
+
+    for (int wait = 0; wait < 50; wait++){
+      for (uint16_t colCnt = 0; colCnt < large_seg7_matrix[charge_dig_l_test].numElements; colCnt++) {
+        LED_ON(large_seg7_matrix[charge_dig_l_test].pins[colCnt] - 3, brightness, 100, false);
+      }
+      for (uint16_t colCnt = 0; colCnt < large_seg7_matrix[charge_dig_r_test].numElements; colCnt++) {
+        LED_ON(large_seg7_matrix[charge_dig_r_test].pins[colCnt] + 3, brightness, 100, false);
+      }
+    }
+    
+
+  /////////////////////////////////////////////
+
+
     // Remove load from divider
     pinMode(Bat_READ_GND, INPUT);
-    delay(50);                         // allow voltage to settle
+    delay(50); 
 
-
-    if (analogRead(Bat_READ) * (3.0 / 1023.0) <= volt_cutoff) {
-      BYE_flash(0.5, 100, 2);
+    if (voltage_test  <= volt_cutoff) {
+      BYE_flash(0.5, 100, 2);      
       digitalWrite(Bat_ON, HIGH); //shuts it off
     }
 
-    delay(50);                         // allow voltage to settle
 
+    delay(50);                         // allow voltage to settle
     digitalWrite(Bat_ON, HIGH); //brings it back when its plugged in, if 
 
   }
@@ -208,7 +234,7 @@ ISR(RTC_PIT_vect) {
   RTC.PITINTFLAGS = RTC_PI_bm;
   
   sec_count++;
-  if (sec_count >= read_timer) {
+  if (sec_count >= read_timer ) {
     sec_count = 0;
     Minute_flag = true;
   }
