@@ -38,7 +38,7 @@ int wrist_mode = 0;
 int LED_flip = 0;
 int brightness = 50;
 int charge = 1;
-int read_timer = 60; 
+int read_timer = 1; 
 unsigned long fade_duration = 1000;
 unsigned long charge_timer = 1000;
 
@@ -105,37 +105,40 @@ void loop() {
     digitalWrite(Bat_READ_GND, LOW);
     delay(50); 
 
-  ///////////////////////////////////////////// TESTING - TO DISPLAY PERCENTAGE AT TEST /////////////////////////////////////////////
+
   
     int charge_test = analogRead(Bat_READ);
     float voltage_test = charge_test * (3.0 / 1023.0);  // assuming 3.3V reference
     int charge_percent_test = batteryPercent(voltage_test);
     read_timer = charge_percent_test;
 
-    if (voltage_test <= volt_cutoff) {
-      charge_percent_test = 0;
-      // digitalWrite(Bat_ON, LOW); // VLM should take vare of it
-    } else if (voltage_test >= 3.0) {
-      charge_percent_test = 99;
-    } else {
-      charge_percent_test = batteryPercent(voltage_test);
-    }
 
-    if (charge_percent_test < 1) charge_percent_test = 0;
+  // ///////////////////////////////////////////// TESTING - TO DISPLAY PERCENTAGE AT TEST /////////////////////////////////////////////
+  //   if (voltage_test <= volt_cutoff) {
+  //     charge_percent_test = 0;
+  //     // digitalWrite(Bat_ON, LOW); // VLM should take vare of it
+  //   } else if (voltage_test >= 3.0) {
+  //     charge_percent_test = 99;
+  //   } else {
+  //     charge_percent_test = batteryPercent(voltage_test);
+  //   }
 
-    int charge_dig_l_test = charge_percent_test / 10;
-    int charge_dig_r_test = charge_percent_test % 10;
+  //   if (charge_percent_test < 1) charge_percent_test = 0;
 
-    for (int wait = 0; wait < 50; wait++){
-      for (uint16_t colCnt = 0; colCnt < large_seg7_matrix[charge_dig_l_test].numElements; colCnt++) {
-        LED_ON(large_seg7_matrix[charge_dig_l_test].pins[colCnt] - 3, brightness, 100, false);
-      }
-      for (uint16_t colCnt = 0; colCnt < large_seg7_matrix[charge_dig_r_test].numElements; colCnt++) {
-        LED_ON(large_seg7_matrix[charge_dig_r_test].pins[colCnt] + 3, brightness, 100, false);
-      }
-    }
+  //   int charge_dig_l_test = charge_percent_test / 10;
+  //   int charge_dig_r_test = charge_percent_test % 10;
+
+  //   for (int wait = 0; wait < 50; wait++){
+  //     for (uint16_t colCnt = 0; colCnt < large_seg7_matrix[charge_dig_l_test].numElements; colCnt++) {
+  //       LED_ON(large_seg7_matrix[charge_dig_l_test].pins[colCnt] - 3, brightness, 100, false);
+  //     }
+  //     for (uint16_t colCnt = 0; colCnt < large_seg7_matrix[charge_dig_r_test].numElements; colCnt++) {
+  //       LED_ON(large_seg7_matrix[charge_dig_r_test].pins[colCnt] + 3, brightness, 100, false);
+  //     }
+  //   }
     
 
+    
   /////////////////////////////////////////////
 
 
@@ -143,9 +146,9 @@ void loop() {
     pinMode(Bat_READ_GND, INPUT);
     delay(50); 
 
-    if (voltage_test  <= volt_cutoff) {
+    if (read_timer  <= 3) {
       BYE_flash(0.5, 100, 2);      
-      digitalWrite(Bat_ON, HIGH); //shuts it off
+      digitalWrite(Bat_ON, LOW); //shuts it off
     }
 
 
